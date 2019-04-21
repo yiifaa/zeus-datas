@@ -33,14 +33,14 @@ object DataTransformer {
       }
     }
     buffSource.close()
-    val head = timeArr.mkString("\t")
-    val output = new File("change-sale.txt")
+    val head = timeArr.mkString(",")
+    val output = new File("changde-sales.txt")
     if(!output.exists()) {
       output.createNewFile()
     }
     val writer = new PrintWriter(output)
     writer.write(head + "\n")
-    results.map(item => item._1 + "\t" + item._2.mkString("\t"))
+    results.map(item => item._1 + "," + item._2.mkString(","))
            .foreach(item => writer.write(item + "\n"))
 
     writer.close()
