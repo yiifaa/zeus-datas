@@ -8,4 +8,4 @@ agg.sumary <- with(score.new, {
   agg.mean <- aggregate(score.new,  by = list(Group.mean =Z), FUN = mean)
   cbind(agg.sum[c(1, 3, 4)], agg.mean[c(3, 4)])
 })
-
+names(agg.sumary) <- c("ZY", "C.S", "A.S", "C.M", "A.M")
